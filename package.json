@@ -1,0 +1,11 @@
+{
+	"name": "food-api",
+	"version": "0.2.0",
+	"description": "Simplifies process for modders to add custom food item sprites.",
+	"homepage": "https://github.com/EL20202/crosscode-food-api",
+	"ccmodDependencies": {
+		"ccloader": "^2.20.0",
+        "crosscode": "^1.4.0",
+        "item-api": "^0.4.0"
+	}
+}

@@ -1,8 +1,14 @@
 window.foodAPI = {
 
-    foodList: {},
-    spriteSrc: {},
-
+    foodList: {
+        "FALLBACK": {
+            src: "foodAPI",
+            index: 0
+        }
+    },
+    spriteSrc: {
+        foodAPI: new ig.TileSheet("media/entity/player/foods/food-api.png")
+    },
 
 
     /**
@@ -18,7 +24,6 @@ window.foodAPI = {
         // gets the proper location of the food tilesheet
         const updatedImagePath = imgPath.match(/^media\/entity\/player\/foods\//) == null ? "media/entity/player/foods/" + imgPath : imgPath
         let img = new ig.TileSheet(updatedImagePath, 16, 16, 0, 0)
-        if (img.image.width % 16 !== 0) throw new Error(`FoodAPI: Food tilesheet at ${updatedImagePath} should have a pixel width with a multiple of 16.`)
         foodAPI.spriteSrc[modID] = img;
 
         let itemID = ""

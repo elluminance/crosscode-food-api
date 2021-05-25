@@ -1,6 +1,6 @@
 {
     "id": "food-api",
-    "version": "0.2.0",
+    "version": "0.2.1",
 
     "title": "Food API",
     "description": "Simplifies process for modders to add custom food item sprites.",
@@ -19,6 +19,6 @@
 
     "dependencies": {
         "ccloader": "^2.20.0",
-        "item-api": "^0.4.0"
+        "item-api": ">=0.4.0"
 	}
 }

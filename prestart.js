@@ -1,7 +1,7 @@
 ig.ACTION_STEP.SHOW_FOOD_ICON.inject({
     init(a) {
-        this.customItem = a.icon in foodAPI.foodList
-        this.icon = sc.FOOD_SPRITE[a.icon] ?? (this.customItem ? a.icon : 0);
+        this.customItem = !(a.icon in sc.FOOD_SPRITE)
+        this.icon = sc.FOOD_SPRITE[a.icon] ?? (this.customItem ? ((a.icon in foodAPI.foodList) ? a.icon : "FALLBACK") : 0);
         this.offset = a.offset || null;
     },
     start(a) {

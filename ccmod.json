@@ -1,6 +1,6 @@
 {
     "id": "food-api",
-    "version": "0.2.1",
+    "version": "1.0.0",
 
     "title": "Food API",
     "description": "Simplifies process for modders to add custom food item sprites.",

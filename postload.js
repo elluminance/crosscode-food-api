@@ -7,7 +7,7 @@ window.foodAPI = {
         }
     },
     spriteSrc: {
-        foodAPI: new ig.TileSheet("media/entity/player/foods/food-api.png")
+        foodAPI: new ig.TileSheet("media/entity/player/foods/food-api.png", 16, 16, 0, 0)
     },
 
 

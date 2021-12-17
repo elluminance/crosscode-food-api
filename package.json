@@ -5,5 +5,16 @@
 	"homepage": "https://github.com/EL20202/crosscode-food-api",
 	"ccmodDependencies": {
         "item-api": ">=0.4.0"
-	}
+	},
+	"postload": "dist/postload.js",
+	"prestart": "dist/prestart.js",
+	
+	"devDependencies": {
+        "typescript": "^3.9.0",
+        "ultimate-crosscode-typedefs": "el20202/ultimate-crosscode-typedefs"
+    },
+    "scripts": {
+        "build": "tsc --build",
+        "watch": "tsc --watch"
+    }
 }

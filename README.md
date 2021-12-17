@@ -9,10 +9,12 @@ Simply drop **food-api.ccmod** from [Releases](https://github.com/EL20202/crossc
 ## For mod developers:
 
 ### ***Using Food-API***
-Install **food-api** as normal, and in your mod's prestart script, you call the function `foodAPI.register(modID, spriteFile, itemList)`.
+Install **food-api** as normal, and in your mod's prestart script you simply call the function: 
+
+`sc.foodAPI.register(modID, spriteFile, itemList)`.
 
 - `modID` - The internal ID of the mod.
-- `spriteFile` - The file of the spritesheet of the foods you are adding, located in `assets/media/entity/player/foods/`.
+- `spriteFile` - The filename of the spritesheet of the foods you are adding, located in `assets/media/entity/player/foods/`.
 - `itemList` - An array of all item names you will be adding in order from left to right, top to bottom.
 
 For example, if you are the mod author of the mod "leas-adventure", and you want to add custom consumable, adding sprites from `leas-adventure.png`, you simply put that sprite sheet at `assets/media/entity/player/food/leas-adventure.png`. The spritesheet's width and height should be multiples of 16 (for example, a sprite sheet could be 64×128, or something like 96×64). Each food sprite is 16×16 in size.

@@ -14,8 +14,8 @@
         "name": "EL2020"
     }],
 
-    "postload": "postload.js",
-    "prestart": "prestart.js",
+    "postload": "dist/postload.js",
+    "prestart": "dist/prestart.js",
 
     "dependencies": {
         "item-api": ">=0.4.0"

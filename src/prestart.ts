@@ -35,8 +35,8 @@ sc.FoodIconEntity.inject({
 })
 
 // retrieves the icons
-const buffIcons = new ig.Font("media/font/icons-buff-el.png", 8, ig.MultiFont.ICON_START);
-const buffIconsLarge = new ig.Font("media/font/icons-buff-large-el.png", 16, ig.MultiFont.ICON_START);
+const buffIcons = new ig.Font("media/font/icons-buff-foodapi.png", 8, ig.MultiFont.ICON_START);
+const buffIconsLarge = new ig.Font("media/font/icons-buff-large-foodapi.png", 16, ig.MultiFont.ICON_START);
 
 // retrieves index of last icon set registered, then pushes new icons
 const newTinyFontIndex = sc.fontsystem.tinyFont.iconSets.length;
@@ -44,27 +44,31 @@ const newFontIndex = sc.fontsystem.font.iconSets.length;
 sc.fontsystem.tinyFont.pushIconSet(buffIcons);
 sc.fontsystem.font.pushIconSet(buffIconsLarge);
 
-//assigns names to icons
-sc.fontsystem.tinyFont.setMapping({
-    "stat-critical-dmg": [newTinyFontIndex, 0], // bullseye
-    "stat-dash-invinc": [newTinyFontIndex, 1], // flash step
-    "stat-assault": [newTinyFontIndex, 2], // assault
-    "stat-guard-sp": [newTinyFontIndex, 3], // avenger
-    "stat-momentum": [newTinyFontIndex, 4], // momentum
-    "stat-cond-effect-all": [newTinyFontIndex, 5], // status rush
-    "stat-knockback": [newTinyFontIndex, 6], // bulk calibre
-    "stat-perfect-guard-window": [newTinyFontIndex, 7], // royal guard
-})
-sc.fontsystem.font.setMapping({
-    "stat-critical-dmg": [newFontIndex, 0],
-    "stat-dash-invinc": [newFontIndex, 1],
-    "stat-assault": [newFontIndex, 2],
-    "stat-guard-sp": [newFontIndex, 3],
-    "stat-momentum": [newFontIndex, 4],
-    "stat-cond-effect-all": [newFontIndex, 5],
-    "stat-knockback": [newFontIndex, 6],
-    "stat-perfect-guard-window": [newFontIndex, 7],
-})
+let bufficons = [
+    "stat-critical-dmg", // bullseye
+    "stat-dash-invinc", // flash step
+    "stat-assault", // assault
+    "stat-guard-sp", // avenger
+    "stat-momentum", // momentum
+    "stat-cond-effect-all", // status rush
+    "stat-knockback", // bulk calibre
+    "stat-perfect-guard-window", // royal guard
+    "stat-berserk", // berserker
+]
+
+let tinyicons: ig.MultiFont.Mapping = {}
+let normalicons: ig.MultiFont.Mapping = {}
+let b = 0;
+
+// preparing mappings for both sizes at the same time
+bufficons.forEach(element => {
+    tinyicons[element] = [newTinyFontIndex, b];
+    normalicons[element] = [newFontIndex, b];
+    b++;
+});
+
+sc.fontsystem.tinyFont.setMapping(tinyicons)
+sc.fontsystem.font.setMapping(normalicons)
 
 sc.STAT_PARAM_TYPE.CRITICAL_DMG = {
     key: "CRITICAL_DMG"
@@ -90,3 +94,6 @@ sc.STAT_PARAM_TYPE.KNOCKBACK = {
 sc.STAT_PARAM_TYPE.PERFECT_GUARD_WINDOW = {
     key: "PERFECT_GUARD_WINDOW"
 };
+sc.STAT_PARAM_TYPE.BERSERK = {
+    key: "BERSERK"
+}

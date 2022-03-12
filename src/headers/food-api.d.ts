@@ -2,7 +2,7 @@ declare namespace ig {
     namespace ACTION_STEP {
         // @ts-ignore
         interface SHOW_FOOD_ICON {
-            customItem?: string
+            customItem?: string | null
         }
     }
 }
@@ -10,12 +10,12 @@ declare namespace ig {
 declare namespace sc {
     namespace FoodIconEntity {
         interface Settings {
-            customItem?: string
+            customItem?: string | null
         }
     }
 
     interface FoodIconEntity {
-        customItem?: string
+        customItem?: string | null
     }
     
     namespace FoodAPI {

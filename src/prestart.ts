@@ -54,6 +54,9 @@ let bufficons = [
     "stat-knockback", // bulk calibre
     "stat-perfect-guard-window", // royal guard
     "stat-berserk", // berserker
+    "stat-xp-plus", // trainer
+    "stat-drop-chance", // lucky lucky
+    "stat-perfect-guard-reset", //riposte
 ]
 
 let tinyicons: ig.MultiFont.Mapping = {}
@@ -96,4 +99,13 @@ sc.STAT_PARAM_TYPE.PERFECT_GUARD_WINDOW = {
 };
 sc.STAT_PARAM_TYPE.BERSERK = {
     key: "BERSERK"
+}
+sc.STAT_PARAM_TYPE.XP_PLUS = {
+    key: "XP_PLUS"
+}
+sc.STAT_PARAM_TYPE.DROP_CHANCE = {
+    key: "DROP_CHANCE"
+}
+sc.STAT_PARAM_TYPE.PERFECT_GUARD_RESET = {
+    key: "PERFECT_GUARD_RESET"
 }
